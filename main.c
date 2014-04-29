@@ -1,9 +1,7 @@
-//This is a main file.
-
+#include "spmv.h"
 
 int main()
 {
-    print "Hello";
-
-  return 0;
+    printf("Hello world!\n");
+    return 0;
 }
