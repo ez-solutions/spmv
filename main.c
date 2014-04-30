@@ -14,7 +14,7 @@ int main()
     ReadMatrix(AMatrix, MatrixFile);
 
 
-
+	//!Free matrix memory
     FreeMatrix(AMatrix);
     return 0;
 }
