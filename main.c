@@ -13,5 +13,8 @@ int main()
     ELLRMatrix AMatrix;
     ReadMatrix(AMatrix, MatrixFile);
 
+
+
+    FreeMatrix(AMatrix);
     return 0;
 }
