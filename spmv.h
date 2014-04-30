@@ -1,5 +1,4 @@
-//This is a header file
-
+//!lib Files
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -41,5 +40,5 @@ typedef struct
     };
 }ELLRMatrix;
 
-
-void ReadMatrix(ELLRMatrix aMatrix, const char aFileName[]);
+//! \func Function accepts ELLR matrix format, free memories
+void FreeMatrix(ELLR aMatrix);

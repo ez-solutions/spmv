@@ -45,4 +45,3 @@ void FreeMatrix(ELLRMatrix aMatrix)
         aMatrix.mnnz = 0;
         aMatrix.mbandwidth = 0;
     }
-}
