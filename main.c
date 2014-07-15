@@ -13,7 +13,7 @@ int main()
     ELLRMatrix AMatrix;
     ReadMatrix(AMatrix, MatrixFile);
 
-    //!This change made in branch01
+    //!This change made in ELL branch
 
 	//!Free matrix memory
     FreeMatrix(AMatrix);
