@@ -24,4 +24,5 @@
 
 #Codeblocks Files
 bin/
-*.layout
+spmv.layout
+.gitignore
