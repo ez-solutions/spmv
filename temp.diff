@@ -1,0 +1,158 @@
+diff --git a/main.c b/main.c
+index f9bd239..ae4131c 100644
+--- a/main.c
++++ b/main.c
+@@ -10,13 +10,11 @@ int main()
+     sprintf(VectorFile, "%s%d", "bvector",   MSIZE);    //! \var create vector file based on matrix size
+ 
+     printf("\nMatrix file is: %s\n", MatrixFile);
+-    ELLRMatrix AMatrix;
+-    ReadMatrix(AMatrix, MatrixFile);
+ 
+     //!This change made in ELL branch
+     //!This is csr branch
+ 
+ 	//!Free matrix memory
+-    FreeMatrix(AMatrix);
++//    FreeMatrix(AMatrix);
+     return 0;
+ }
+diff --git a/spmv.c b/spmv.c
+index 33e4e92..04829ca 100644
+--- a/spmv.c
++++ b/spmv.c
+@@ -2,46 +2,30 @@
+ 
+ #include "spmv.h"
+ 
+-void ReadMatrix(ELLRMatrix aMatrix, const char aFileName[])
+-{
+-    int mrow = 10;
+-    int mnnz = 50;
+-    int mbandwidth = 5;
++//void ReadMatrix(T aMatrix, const char aFileName[])
++//{
++//    int mrow = 10;
++//    int mnnz = 50;
++//    int mbandwidth = 5;
++//
++//    aMatrix.mrow = mrow;
++//    aMatrix.mnnz = mnnz;
++//    aMatrix.mbandwidth = mbandwidth;
++//
++//    FILE* myfile;
++//    if((myfile=fopen(aFileName, "r"))==NULL)
++//	{
++//		fprintf(stderr, "\nError opening %s!\n", aFileName);
++//		exit(0);
++//	}
++//	else
++//	{
++//	    char sdummy[MAXLEN];
++//		fscanf(myfile, "%s\t%s\t%s", sdummy, sdummy, sdummy);
++//		//!read mRow, totalNNZ, mBandWidth
++//		fscanf(myfile, "%d\t%d\t%d", &aMatrix.mrow, &aMatrix.mnnz, &aMatrix.mbandwidth);
++//		printf("mRow = %d\ntotalNNZ = %d\nmBandWidth = %d\n", aMatrix.mrow, aMatrix.mnnz, aMatrix.mbandwidth);
++//		//!initialize COEF, JCOEF, bandWidthOccu with -1s
++//		//aMatrix.SetupMatrix();
++//	}
+ 
+-    aMatrix.mrow = mrow;
+-    aMatrix.mnnz = mnnz;
+-    aMatrix.mbandwidth = mbandwidth;
+-
+-    FILE* myfile;
+-    if((myfile=fopen(aFileName, "r"))==NULL)
+-	{
+-		fprintf(stderr, "\nError opening %s!\n", aFileName);
+-		exit(0);
+-	}
+-	else
+-	{
+-	    char sdummy[MAXLEN];
+-		fscanf(myfile, "%s\t%s\t%s", sdummy, sdummy, sdummy);
+-		//!read mRow, totalNNZ, mBandWidth
+-		fscanf(myfile, "%d\t%d\t%d", &aMatrix.mrow, &aMatrix.mnnz, &aMatrix.mbandwidth);
+-		printf("mRow = %d\ntotalNNZ = %d\nmBandWidth = %d\n", aMatrix.mrow, aMatrix.mnnz, aMatrix.mbandwidth);
+-		//!initialize COEF, JCOEF, bandWidthOccu with -1s
+-		//aMatrix.SetupMatrix();
+-	}
+-
+-
+-
+-}
+-
+-
+-void FreeMatrix(ELLRMatrix aMatrix)
+-{
+-    if(sizeof(aMatrix.entry) != 0)
+-    {
+-        free(aMatrix.entry);
+-        free(aMatrix.column);
+-        free(aMatrix.bandwidth);
+-        aMatrix.mrow = 0;
+-        aMatrix.mnnz = 0;
+-        aMatrix.mbandwidth = 0;
+-    }
+diff --git a/spmv.depend b/spmv.depend
+index a5f4a49..805c27a 100644
+--- a/spmv.depend
++++ b/spmv.depend
+@@ -10,10 +10,10 @@
+ 1398787663 source:/home/nathanzhouen/GitProjects/spmv/spmv.c
+ 	"spmv.h"
+ 
+-1398807367 source:/home/nathan/Projects/spmv/main.c
++1405718605 source:/home/nathan/Projects/spmv/main.c
+ 	"spmv.h"
+ 
+-1398808767 /home/nathan/Projects/spmv/spmv.h
++1405718429 /home/nathan/Projects/spmv/spmv.h
+ 	<stdio.h>
+ 	<stdlib.h>
+ 	<math.h>
+diff --git a/spmv.layout b/spmv.layout
+index 5c3944d..db3134b 100644
+--- a/spmv.layout
++++ b/spmv.layout
+@@ -1,34 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+ <CodeBlocks_layout_file>
+ 	<ActiveTarget name="Debug" />
+-<<<<<<< Updated upstream
+-	<File name="spmv.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
++	<File name="spmv.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+ 		<Cursor>
+-			<Cursor1 position="245" topLine="0" />
+-=======
+-	<File name="spmv.c" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+-		<Cursor>
+-			<Cursor1 position="233" topLine="0" />
+->>>>>>> Stashed changes
+-		</Cursor>
+-	</File>
+-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+-		<Cursor>
+-<<<<<<< Updated upstream
+-			<Cursor1 position="507" topLine="0" />
++			<Cursor1 position="153" topLine="0" />
+ 		</Cursor>
+ 	</File>
+-	<File name="spmv.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
++	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+ 		<Cursor>
+-			<Cursor1 position="388" topLine="6" />
+-=======
+-			<Cursor1 position="182" topLine="0" />
++			<Cursor1 position="0" topLine="0" />
+ 		</Cursor>
+ 	</File>
+-	<File name="spmv.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
++	<File name="spmv.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+ 		<Cursor>
+-			<Cursor1 position="702" topLine="0" />
+->>>>>>> Stashed changes
++			<Cursor1 position="835" topLine="0" />
+ 		</Cursor>
+ 	</File>
+ </CodeBlocks_layout_file>
