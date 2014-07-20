@@ -10,13 +10,11 @@ int main()
     sprintf(VectorFile, "%s%d", "bvector",   MSIZE);    //! \var create vector file based on matrix size
 
     printf("\nMatrix file is: %s\n", MatrixFile);
-    ELLRMatrix AMatrix;
-    ReadMatrix(AMatrix, MatrixFile);
 
     //!This change made in ELL branch
     //!This is csr branch
 
 	//!Free matrix memory
-    FreeMatrix(AMatrix);
+//    FreeMatrix(AMatrix);
     return 0;
 }

@@ -24,7 +24,7 @@
 
 #Codeblocks Files
 bin/
-spmv.layout
-spmv.cbp
-spmv.depend
+*.layout
+*.cbp
+*.depend
 .gitignore
