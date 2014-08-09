@@ -11,7 +11,7 @@ int main()
 
     printf("\nMatrix file is: %s\n", MatrixFile);
 
-    //!This change made in ELL branch
+    //!This change made in DEVELOP
     //!This is csr branch
 
 	//!Free matrix memory
