@@ -22,9 +22,4 @@
 *.x86_64
 *.hex
 
-#Codeblocks Files
-bin/
-spmv.layout
-spmv.cbp
-spmv.depend
 .gitignore
