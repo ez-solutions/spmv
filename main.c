@@ -12,7 +12,7 @@ int main()
     printf("\nMatrix file is: %s\n", MatrixFile);
 
     //!This change made in ELL branch
-    //!This is csr branch
+    //!This change will be merged to new_branch
 
 	//!Free matrix memory
   //    FreeMatrix(AMatrix);
